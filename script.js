@@ -1,18 +1,6 @@
-var w = {
-    'start': {
-        el: document.getElementsByClassName('startmenu')[0],
-        display: 'block'
-    },
-    'chrome': {
-        el: document.getElementById('chrome'),
-        display: 'block'
-    },
-    'notepad': {
-        el: document.getElementById('notepad'),
-        display: 'block'
-    }
-}
 
+
+//Time & Date
 function showTime() {
     let d = new Date();
     let h = d.getHours();
@@ -31,43 +19,43 @@ function showTime() {
 showTime()
 setInterval(showTime, 1000);
 
-function vis(obj, state) {
-    if(state == 0) {
-        w[obj].el.style.display = "none";
-    } else if (state == 1) {
-        w[obj].el.style.display = w[obj].display;
-    } else {
-        if (w[obj].el.style.display != w[obj].display) {
-            w[obj].el.style.display = w[obj].display;
-        } else {
-            w[obj].el.style.display = "none";
-        }
-    }
-}
 
-(function () {
-    (function a() {
-        try {
-            (function b(i) {
-                if (('' + (i / i)).length !== 1 || i % 20 === 0) {
-                    (function () { }).constructor('debugger')()
-                } else {
-                    debugger
-                }
-                b(++i)
-            }
-            )(0)
-        } catch (e) {
-            setTimeout(a, 5000)
-        }
+//Block Contextmenu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+
+//Windows
+var e = {
+    'start': {
+        el: document.getElementsByClassName('startmenu')[0]
+    },
+    'chrome': {
+        el: document.getElementById('chrome'),
+        display: 'block'
+    },
+    'notepad': {
+        el: document.getElementById('notepad'),
+        display: 'block'
     }
-    )()
 }
-)();
 
 createWindow(document.getElementById('chrome'))
 createWindow(document.getElementById('notepad'))
-document.addEventListener('contextmenu', event => event.preventDefault());
+
+function vis(obj, state) {
+    if(state == 0) {
+        e[obj].el.style.display = "none";
+    } else if (state == 1) {
+        e[obj].el.style.display = e[obj].display;
+    } else {
+        if (e[obj].el.style.display != e[obj].display) {
+            e[obj].el.style.display = e[obj].display;
+        } else {
+            e[obj].el.style.display = "none";
+        }
+    }
+}
+
 function createWindow(elmnt) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
     if (document.getElementById(elmnt.id + "hed")) {
@@ -106,10 +94,7 @@ function createWindow(elmnt) {
 }
 
 function search() {
-    let task = document.getElementsByClassName('search')[0];
-    let bar = task.getElementsByTagName('input')[0]
-
-    bar.focus()
+    document.getElementsByClassName('search')[0].getElementsByTagName('input')[0].focus();
 }
 
 function startmenu(val) {
@@ -126,3 +111,25 @@ function startmenu(val) {
         }
     }
 }
+
+
+//Annoy Dev Tools
+(function () {
+    (function a() {
+        try {
+            (function b(i) {
+                if (('' + (i / i)).length !== 1 || i % 20 === 0) {
+                    (function () { }).constructor('debugger')()
+                } else {
+                    debugger
+                }
+                b(++i)
+            }
+            )(0)
+        } catch (e) {
+            setTimeout(a, 5000)
+        }
+    }
+    )()
+}
+)();
