@@ -97,17 +97,32 @@ function search() {
     document.getElementsByClassName('search')[0].getElementsByTagName('input')[0].focus();
 }
 
+function run(inp) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        try {
+            eval(inp.value)
+        }
+        catch(err) {
+            console.error(err)
+        }
+    }
+}
+
 function startmenu(val) {
     let smenu = document.getElementsByClassName('startmenu')[0];
+    let smenuapps = smenu.getElementsByClassName('app')[0];
     if(val == 0) {
         smenu.style.width = "0px";
     } else if (val == 1) {
         smenu.style.width = "400px";
     } else {
-        if(smenu.style.width == "0px") {
-            smenu.style.width = "400px";
-        } else {
+        if(smenu.style.width == "370px") {
             smenu.style.width = "0px";
+            smenuapps.style.width = "0px";
+        } else {
+            smenu.style.width = "370px";
+            smenuapps.style.width = "85.1%";
         }
     }
 }

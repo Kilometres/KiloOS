@@ -94,6 +94,16 @@ img {
     right: -50px;
     transform: translate(0, -50%);
     transition: all 0.5s ease-in-out;
+    background: #333333;
+    border: none;
+    color: #f0f0f0;
+    font-size: 15px;
+    padding: 3px;
+
+}
+
+.search > input::-webkit-input-placeholder {
+    color: #798180;
 }
 
 .search:focus-within {
@@ -137,15 +147,16 @@ img {
 
 
 .startmenu {
-    width: 400px;
-    height: 500px;
+    /*width: 370px;*/
+    width: 0px;
+    height: 526px;
     background-image: linear-gradient(to bottom right, #262626D8, #121212D8);
     position: absolute;
     bottom: 55px;
     z-index: 990;
-    display: block;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
+    display: inline;
     backdrop-filter: blur(10px);
 }
 
@@ -153,12 +164,24 @@ img {
     height: 100%;
     width: 50px;
     background: #1c1c1eA0;
+    float: left;
 }
 
-.startmenu > .apps {
+.startmenu > .app {
     height: 100%;
-    width: 350px;
-    background: red;
+    width: 85.1%;
+    margin-top: 5px;
+    margin-left: 55px;
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px 100px;
+    grid-gap: 4px;
+    transition: all 0.4s ease-in-out;
+}
+
+.startmenu > .app > img:hover {
+    outline: 2px solid white;
+    cursor: pointer;
 }
 
 
