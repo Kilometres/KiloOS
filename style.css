@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to top right, #2ec1c8, #31317b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    z-index: -1000;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+#bg {
+    z-index: -999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 80%;
+    width: 500px;
+    height: 500px;
+}
+
+.taskbar {
+    position: absolute;
+    bottom: 0px;
+    background-image: linear-gradient(to bottom right, #2f2f2f, #1a1a1a);
+    width: 100%;
+    height: 55px;
+    z-index: 1000;
+}
+
+.task {
+    width: 50px;
+    height: 55px;
+    transition: background-color 0.075s ease-in-out;
+    display: inline-block;
+}
+
+.task > img {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+}
+
+.task:hover {
+    background-color: #3a3a3a;
+}
+
+.win {
+    margin-left: 5px;
+}
+
+.win > img {
+    filter: invert();
+}
+
+.search > img {
+    filter: invert();
+    left: 7.5px;
+    transform: translate(0, -50%);
+}
+
+.search {
+    width: 50px;
+    transition: all 0.5s ease-in-out;
+}
+
+.search > input {
+    opacity: 0;
+    position: relative;
+    width: 0px;
+    top: -9px;
+    right: -50px;
+    transform: translate(0, -50%);
+    transition: all 0.5s ease-in-out;
+}
+
+.search:focus-within {
+    width: 270px;
+    transition: all 0.5s ease-in-out;
+}
+
+.search > input:focus {
+    opacity: 1;
+    width: 200px;
+}
+
+
+.settings > img {
+    filter: invert();
+}
+
+.taskbartime {
+    width: 100px;
+    height: 55px;
+    transition: background-color 0.075s ease-in-out;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    text-align: center;
+}
+
+
+.taskbartime > span {
+    color: white;
+    display: inline-block;
+}
+
+#time {
+    margin-top: 5px;
+}
+
+.taskbartime:hover {
+    background-color: #3a3a3a;
+}
+
+.startmenu {
+    width: 400px;
+    height: 500px;
+    background-image: linear-gradient(to bottom right, #2f2f2f, #1a1a1a);
+    position: absolute;
+    bottom: 55px;
+    z-index: 990;
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.window {
+    position: absolute;
+    top: calc(50% - 300px);
+    left: calc(50% - 350px);
+    height: 600px;
+    width: 700px;
+    background-image: linear-gradient(to bottom right, #2f2f2f, #1a1a1a);
+    resize: both;
+    overflow: auto;
+    z-index: 500;
+    min-width: 370px;
+    min-height: 250px;
+    display: none;
+    overflow: hidden;
+}
+
+.window > .header {
+    height: 30px;
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.window > .header > span {
+    position: relative;
+    top: 15%;
+    left: 5px;
+}
+
+.window > .header > button {
+    border: none;
+    height: 30px;
+    width: 30px;
+    right: 0px;
+    float: right;
+    background-color: #ec1424;
+    color: white;
+}
+
+.window > .cont {
+    height: 100%;
+    width: 100%;
+}
+
+#notepad > .cont {
+    background: white;
+}
+
+#notepad > .cont > textarea {
+    height: calc(100% - 52px);
+    width: calc(100% - 22px);
+    resize: none;
+    padding: 10px;
+    overflow: scroll;
+    font-size: 17px;
+}
+
+#chrome {
+    display: block;
+}
+
+#chrome > .cont {
+
+}
+
+#chrome > .cont > .chromebar {
+    background: #2e2e2e;
+    height: 30px;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>KiloOS</title>
+    </head>
+    <body>
+        <div class="taskbar">
+            <div class="task win" onclick="startmenu(2)">
+                <img src="https://i.imgur.com/ym6f43c.png" draggable="false">
+            </div>
+            <div class="task search" onclick="search()">
+                <img src="https://i.imgur.com/CrizgfC.png" draggable="false">
+                <input type="text" placeholder="Type here to search">
+            </div>
+            <div class="task chrome" onclick="vis('chrome', 2)">
+                <img src="https://i.imgur.com/G5kYZFB.png" draggable="false">
+            </div>
+            <div class="task notepad" onclick="vis('notepad', 2)">
+                <img src="https://i.imgur.com/cccIUyd.png" draggable="false">
+            </div>
+            <div class="task settings">
+                <img src="https://i.imgur.com/ZyTWr7x.png" draggable="false">
+            </div>
+            <div class="taskbartime">
+                <span id="time">00:00:00</span>
+                <span id="date">00/00/2000</span>
+            </div>
+        </div>
+        <div class="startmenu">
+            <div class="control">
+
+            </div>
+        </div>
+        <div id="chrome" class="window">
+            <div id="chromehed" class="header">
+                <span>Chrome</span>
+                <button id="chromeclose">X</button>
+            </div>
+            <div class="cont">
+                <div class="chromebar">
+                    <input type="text">
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="notepad" class="window">
+            <div id="notepadhed" class="header">
+                <span>Notepad</span>
+                <button id="notepadclose">X</button>
+            </div>
+            <div class="cont">
+                <textarea>You should probably shush.</textarea>
+            </div>
+        </div>
+
+
+        <img src="https://i.imgur.com/ym6f43c.png" id="bg">
+        <script src="script.js" charset="utf-8"></script>
+        <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+    </body>
+</html>
