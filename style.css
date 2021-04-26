@@ -39,103 +39,22 @@ img {
 .taskbar {
     position: absolute;
     bottom: 0px;
-    background: #1C1C1C;
+    right: 0px;
     width: 100%;
     height: 40px;
-    z-index: 1000;
-}
-
-.task {
-    width: 48px;
-    height: 40px;
-    transition: background-color 0.075s ease-in-out;
-    display: inline-block;
-}
-
-.task > img {
-    width: 24px;
-    height: 24px;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.task:hover {
-    background-color: #373737;
-}
-
-.win > img {
-    filter: invert();
-    height: 18px;
-    width: 18px;
-    top: 40%;
+    background-color: #1C1C1C;
 }
 
 .win {
-    padding-top: 6px;
+    outline: solid white 1px;
+    height: 100%;
+    width: 40px;
 }
 
-.search {
-    height: 36px;
-    background: #F2F2F2;
-    width: 345px;
-    border: 2px solid #C2C2C2;
-    margin-left: -3px;
-}
-
-.search:hover {
-    background-color: #F2F2F2;
-}
-
-.search > img {
-    left: 20px;
-}
-
-.search > input {
-    opacity: 0;
-    position: relative;
-    width: 0px;
-    top: -9px;
-    right: -50px;
-    transform: translate(0, -50%);
-    transition: all 0.5s ease-in-out;
-    background: #333333;
-    border: none;
-    color: #f0f0f0;
-    font-size: 15px;
-    padding: 3px;
-
-}
-
-.search > input::-webkit-input-placeholder {
-    color: #798180;
-}
-
-.settings > img {
-    filter: invert();
-}
-
-
-.taskbartime {
-    width: 80px;
-    height: 40px;
-    transition: background-color 0.075s ease-in-out;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    text-align: center;
-}
-
-.taskbartime:hover {
-    background-color: #3a3a3a;
-}
-
-.taskbartime > span {
-    color: white;
-    display: inline-block;
-    font-size: 12px;
-    margin-top: -5px;
+.win > img {
+    display: block;
+    width: 18px;
+    height: 18px;
 }
 
 
