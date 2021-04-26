@@ -5,15 +5,13 @@ function showTime() {
     let d = new Date();
     let h = d.getHours();
     let m = d.getMinutes();
-    let s = d.getSeconds();
     let da = d.getDate();
     let mo = d.getMonth()+1;
     h = (h < 10) ? "0" + h : h;
     m = (m < 10) ? "0" + m : m;
-    s = (s < 10) ? "0" + s : s;
     da = (da < 10) ? "0" + da : da;
     mo = (mo < 10) ? "0" + mo : mo;
-    document.getElementById('time').innerHTML = `${h}:${m}:${s}`
+    document.getElementById('time').innerHTML = `${h}:${m}`
     document.getElementById('date').innerHTML = `${da}/${mo}/${d.getFullYear()}`
 }
 showTime()
@@ -93,10 +91,6 @@ function createWindow(elmnt) {
     }
 }
 
-function search() {
-    document.getElementsByClassName('search')[0].getElementsByTagName('input')[0].focus();
-}
-
 function run(inp) {
     if (event.key === 'Enter') {
         event.preventDefault();
@@ -113,16 +107,20 @@ function startmenu(val) {
     let smenu = document.getElementsByClassName('startmenu')[0];
     let smenuapps = smenu.getElementsByClassName('app')[0];
     if(val == 0) {
-        smenu.style.width = "0px";
+        smenu.style.height = "0px";
+        smenu.style.opacity = 0;
     } else if (val == 1) {
-        smenu.style.width = "400px";
+        smenu.style.height = "526px";
+        smenu.style.opacity = 1;
     } else {
-        if(smenu.style.width == "370px") {
-            smenu.style.width = "0px";
-            smenuapps.style.width = "0px";
+        if(smenu.style.height == "526px") {
+            smenu.style.height = "0px";
+            smenuapps.style.height = "0px";
+            smenu.style.opacity = 0;
         } else {
-            smenu.style.width = "370px";
-            smenuapps.style.width = "85.1%";
+            smenu.style.height = "526px";
+            smenuapps.style.height = "100%";
+            smenu.style.opacity = 1;
         }
     }
 }
