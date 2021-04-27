@@ -93,15 +93,16 @@ img {
 }
 
 .search > input {
-    width: 240px;
+    width: 290px;
     height: 24px;
     position: absolute;
     top: 50%;
-    left: 160px;
-    transform: translate(-50%, -50%);
+    left: 40px;
+    transform: translate(0, -50%);
     color: #262626;
     border: none;
     font-size: 14px;
+    background: none;
 }
 
 .search > input::placeholder {
