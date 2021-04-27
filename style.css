@@ -25,7 +25,7 @@ img {
     user-drag: none;
 }
 
-.taskbar > div > img {
+.taskbar > .icons > div > img {
     width: 24px;
     height: 24px;
 }
@@ -37,6 +37,22 @@ img {
     width: 100%;
     height: 40px;
     background-color: #04121D;
+    display: grid;
+    grid-template-columns: 40px 345px auto;
+    grid-template-rows: 40px;
+}
+
+.icons {
+    width: 100%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px;
+    grid-column-gap: 9px;
+}
+
+.icons > div:hover {
+    background-color: #1E303F;
 }
 
 .win {
@@ -50,8 +66,8 @@ img {
 
 .win > img {
     display: block;
-    width: 16px!important;
-    height: 16px!important;
+    width: 16px;
+    height: 16px;
     position: relative;
     top: 50%;
     left: 50%;
@@ -60,15 +76,16 @@ img {
 
 .search {
     border: 1px solid white;
-    height: 100%;
-    width: 400px;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
     position: relative;
+    background: #F6F6F6;
+    border: 2px solid #C2C2C2;
 }
 
 .search > img {
     width: 24px;
     height: 24px;
-    filter: invert();
     position: absolute;
     top: 50%;
     left: 6px;
@@ -81,6 +98,28 @@ img {
     position: absolute;
     top: 50%;
     left: 160px;
+    transform: translate(-50%, -50%);
+    color: #262626;
+    border: none;
+    font-size: 14px;
+}
+
+.search > input::placeholder {
+    color: #262626;
+}
+
+.task {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.task > img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
