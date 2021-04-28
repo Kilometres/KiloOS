@@ -238,7 +238,7 @@ img {
     height: 16px;
 }
 
-.window > .header > button {
+.window > .header > .trafficlights > button {
     border: none;
     height: 30px;
     width: 45px;
@@ -250,15 +250,22 @@ img {
     transition: all 0.15s ease-in-out;
 }
 
-.window > .header > button > img {
+.window > .header > .trafficlights > button > img {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.window > .header > button:hover {
+.window > .header > .trafficlights > button:hover {
     background-color: #ec1424;
+}
+
+.window > .header > .trafficlights {
+    height: 100%;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 .window > .cont {
