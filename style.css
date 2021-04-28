@@ -5,7 +5,7 @@
     padding: 0;
     user-select: none;
     outline: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Segoe UI';
 }
 
 body {
@@ -40,6 +40,7 @@ img {
     display: grid;
     grid-template-columns: 40px 345px auto;
     grid-template-rows: 40px;
+    z-index: 10000;
 }
 
 .icons {
@@ -124,8 +125,37 @@ img {
     transform: translate(-50%, -50%);
 }
 
+.taskview > img {
+    width: 16px!important;
+    height: 15px!important;
+}
+
+.settings > img {
+    filter: invert();
+}
+
 .taskbartime {
-    display: none;
+    height: 100%;
+    width: 71px;
+    color: white;
+    font-weight: lighter;
+    position: absolute;
+    right: 14px;
+    font-size: 14px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.showdesk {
+    height: 100%;
+    width: 4px;
+    border-left: solid 1px #777F8E;
+    position: absolute;
+    right: 0px;
+}
+
+.showdesk:hover {
+    background-color: #1E303F;
 }
 
 .startmenu {
@@ -176,12 +206,14 @@ img {
     width: 700px;
     background-image: linear-gradient(to bottom right, #2f2f2f, #1a1a1a);
     resize: both;
-    overflow: auto;
+    overflow: none;
     z-index: 500;
     min-width: 370px;
     min-height: 250px;
     display: none;
     overflow: hidden;
+    border: solid 1px #1C1C1C;
+    filter: drop-shadow(0px 0px 7px #00000070);
 }
 
 .window > .header {
@@ -193,18 +225,42 @@ img {
 
 .window > .header > span {
     position: relative;
-    top: 15%;
-    left: 5px;
+    top: 8%;
+    left: 9px;
+    font-size: 13px;
+    font-weight: lighter;
+}
+
+.window > .header > img {
+    position: relative;
+    top: 42.5%;
+    left: 8px;
+    transform: translate(0, -50%);
+    width: 16px;
+    height: 16px;
 }
 
 .window > .header > button {
     border: none;
     height: 30px;
-    width: 30px;
+    width: 45px;
     right: 0px;
     float: right;
-    background-color: #ec1424;
     color: white;
+    background: black;
+    position: relative;
+    transition: all 0.15s ease-in-out;
+}
+
+.window > .header > button > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.window > .header > button:hover {
+    background-color: #ec1424;
 }
 
 .window > .cont {
@@ -218,17 +274,32 @@ img {
 }
 
 #notepad > .cont > textarea {
-    height: calc(100% - 52px);
-    width: calc(100% - 22px);
+    height: calc(100% - 42px);
+    width: calc(100% - 8px);
     resize: none;
-    padding: 10px;
+    padding: 4px;
     overflow: scroll;
     font-size: 17px;
+    border: none;
 }
 
+#notepad > .cont > .notepadmenu {
+    height: 18px;
+    width: calc(100% - 22px);
+    border-bottom: solid 2px #F0F0F0;
+    display: grid;
+    grid-template-columns: 32px 34px 52px 39px 39px;
+}
 
-#chrome > .cont {
+#notepad > .cont > .notepadmenu > button {
+    height: 19px;
+    border: none;
+    background: none;
+}
 
+#notepad > .cont > .notepadmenu > button:hover {
+    border: solid 1px #CCE8FF;
+    background: #E5F3FF;
 }
 
 #chrome > .cont > .chromebar {
