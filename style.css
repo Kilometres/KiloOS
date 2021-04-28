@@ -124,6 +124,9 @@ img {
     transform: translate(-50%, -50%);
 }
 
+.taskbartime {
+    display: none;
+}
 
 .startmenu {
     width: 370px;
